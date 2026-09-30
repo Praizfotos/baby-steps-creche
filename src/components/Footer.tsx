@@ -3,8 +3,8 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 import { Logo, NAV } from '@/components/Header'
 
 const socials = [
-  { label: 'Instagram', href: 'https://instagram.com' },
-  { label: 'Facebook', href: 'https://facebook.com' },
+  { label: 'Instagram', href: 'https://www.instagram.com/praizfotos/' },
+  { label: 'Facebook', href: 'https://web.facebook.com/praiz.asala.1' },
 ]
 
 export default function Footer() {

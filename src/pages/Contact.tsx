@@ -489,7 +489,7 @@ export default function Contact() {
           </div>
           <div className="flex flex-wrap gap-3">
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/praizfotos/"
               target="_blank"
               rel="noreferrer noopener"
               className="inline-flex h-11 items-center rounded-full border border-navy/12 bg-white px-5 text-[14.5px] font-semibold text-navy transition-all duration-300 hover:-translate-y-0.5 hover:border-pink hover:bg-pink hover:text-white"
@@ -497,7 +497,7 @@ export default function Contact() {
               Instagram
             </a>
             <a
-              href="https://facebook.com"
+              href="https://web.facebook.com/praiz.asala.1"
               target="_blank"
               rel="noreferrer noopener"
               className="inline-flex h-11 items-center rounded-full border border-navy/12 bg-white px-5 text-[14.5px] font-semibold text-navy transition-all duration-300 hover:-translate-y-0.5 hover:border-pink hover:bg-pink hover:text-white"
