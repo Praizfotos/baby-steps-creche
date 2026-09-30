@@ -1,0 +1,15 @@
+.DS_Store
+.vite
+*.local
+diag.mjs
+dist
+fail.mjs
+fullshot.mjs
+legacy/baby-steps-creche-daycare.html
+node_modules
+ovf.mjs
+qa.mjs
+rects.mjs
+segshot.mjs
+smoke*.mjs
+text.mjs

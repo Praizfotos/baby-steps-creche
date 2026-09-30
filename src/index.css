@@ -1,0 +1,246 @@
+@import 'tailwindcss';
+
+/* ==========================================================================
+   Design tokens — Baby Steps Creche & Daycare
+   ========================================================================== */
+@theme {
+  --color-cream: #fff9f1;
+  --color-cream-deep: #fff0e0;
+  --color-pink: #e8266f;
+  --color-pink-dark: #b81757;
+  --color-pink-soft: #ffe3ee;
+  --color-teal: #0fa79a;
+  --color-teal-dark: #0a7c72;
+  --color-teal-soft: #dff6f2;
+  --color-sun: #ffc94a;
+  --color-navy: #242138;
+  --color-navy-soft: #5b5872;
+  --color-line: #ebdfcf;
+
+  --font-heading: 'Baloo 2', ui-rounded, 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-lift: 0 20px 45px -20px rgba(36, 33, 56, 0.25);
+  --shadow-soft: 0 10px 30px -18px rgba(36, 33, 56, 0.35);
+
+  --ease-expo: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    overflow-x: clip;
+  }
+  body {
+    margin: 0;
+    background: var(--color-cream);
+    color: var(--color-navy);
+    font-family: var(--font-body);
+    font-size: 16.5px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    line-height: 1.03;
+    letter-spacing: -0.015em;
+    font-weight: 800;
+    margin: 0;
+    color: var(--color-navy);
+  }
+  p {
+    margin: 0;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-teal);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  ::selection {
+    background: var(--color-pink);
+    color: #fff;
+  }
+}
+
+@layer components {
+  .wrap {
+    width: 100%;
+    max-width: 1180px;
+    margin-inline: auto;
+    padding-inline: var(--pad, 32px);
+  }
+  .section {
+    padding-block: clamp(72px, 9vw, 116px);
+    position: relative;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-pink);
+  }
+  .eyebrow::before {
+    content: '';
+    width: 26px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+  }
+  .eyebrow-teal {
+    color: var(--color-teal);
+  }
+  .eyebrow-sun {
+    color: #c98b00;
+  }
+  .lede {
+    color: var(--color-navy-soft);
+    font-size: clamp(16.5px, 1.4vw, 18.5px);
+    line-height: 1.7;
+  }
+  .display {
+    font-size: clamp(38px, 6vw, 68px);
+  }
+  .h2 {
+    font-size: clamp(31px, 4.2vw, 50px);
+  }
+  .h3 {
+    font-size: clamp(23px, 2.4vw, 30px);
+  }
+
+  /* photo frame with skeleton reveal */
+  .ph {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(100deg, #fff4e6 30%, #ffe9d6 50%, #fff4e6 70%);
+    background-size: 220% 100%;
+    animation: shimmer 1.5s linear infinite;
+  }
+  .ph > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.6s var(--ease-expo);
+  }
+  .ph > img.loaded {
+    opacity: 1;
+  }
+  @keyframes shimmer {
+    to {
+      background-position: -120% 0;
+    }
+  }
+
+  /* masks */
+  .mask-arch {
+    border-radius: 50% 50% 22px 22px / 34% 34% 22px 22px;
+  }
+  .mask-blob {
+    border-radius: 58% 42% 47% 53% / 44% 44% 56% 56%;
+  }
+  .mask-blob-2 {
+    border-radius: 42% 58% 62% 38% / 56% 40% 60% 44%;
+  }
+  .mask-soft {
+    border-radius: 30px;
+  }
+
+  /* wavy divider */
+  .wave {
+    display: block;
+    width: 100%;
+    height: clamp(50px, 6vw, 90px);
+    line-height: 0;
+  }
+  .wave svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid var(--color-line);
+    border-radius: 26px;
+    box-shadow: var(--shadow-lift);
+  }
+
+  .pill-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: #fff;
+    border: 1px solid var(--color-line);
+    font-size: 13.5px;
+    font-weight: 600;
+  }
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+/* marquee */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 34s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* rotate utility used by the about stamp */
+.rotate-n8 {
+  transform: rotate(-8deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .ph {
+    animation: none;
+  }
+}
