@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import ScrollTrail from '@/components/ScrollTrail'
 import { ScrollToTop } from '@/components/ui'
 import Home from '@/pages/Home'
 import About from '@/pages/About'
@@ -15,6 +16,7 @@ export default function App() {
   return (
     <>
       <ScrollToTop />
+      <ScrollTrail />
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-navy focus:px-5 focus:py-3 focus:text-cream"
